@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Button } from '../Button';
 import { toast } from 'react-toastify';
 export function Booking() {
   const [ref, inView] = useInView({

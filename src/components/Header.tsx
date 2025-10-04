@@ -40,7 +40,9 @@ export function Header() {
           <a href="#contact" className={`hover:text-amber transition-colors ${isScrolled ? 'text-cream' : 'text-cream'}`}>
             Contact
           </a>
-          <Button>Book Now</Button>
+           <Button onClick={() => document.getElementById('booking')?.scrollIntoView({
+                    behavior: 'smooth'
+                  })}>Book Now</Button>
         </nav>
         {/* Mobile Menu Button */}
         <button className="md:hidden text-cream" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
