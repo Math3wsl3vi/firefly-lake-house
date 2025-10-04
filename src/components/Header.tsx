@@ -16,7 +16,7 @@ export function Header() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  return <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-charcoal/90 backdrop-blur-md py-2' : 'bg-transparent py-4'}`}>
+  return <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-charcoal/70 backdrop-blur-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#" className="flex items-center">
           <span className={`text-2xl font-serif ${isScrolled ? 'text-cream' : 'text-cream'}`}>
