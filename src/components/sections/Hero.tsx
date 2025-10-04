@@ -28,7 +28,8 @@ export function Hero() {
   return <section className="relative h-screen w-full overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1189559305118239162/original/865bc6fe-1bc5-4d6d-9257-0cae22558f37.jpeg?im_w=1440" alt="Lakehouse at sunset" className="object-cover w-full h-full" />
+        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1189559305118239162/original/25a7b70e-3047-43bd-ad4f-fa71350e2355.jpeg?im_w=1200" alt="Lakehouse at sunset" className="object-cover w-full h-full md:hidden block" />
+         <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1189559305118239162/original/865bc6fe-1bc5-4d6d-9257-0cae22558f37.jpeg?im_w=1440" alt="Lakehouse at sunset" className="object-cover w-full h-full hidden md:block" />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 to-charcoal/40"></div>
       </div>

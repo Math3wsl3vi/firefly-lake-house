@@ -11,7 +11,7 @@ import { Contact } from '../components/sections/Contact';
 import { Footer } from '../components/Footer';
 export function HomePage() {
 
-  return <div className="font-sans text-charcoal bg-cream min-h-screen">
+  return <div className="font-sans text-charcoal bg-cream min-h-screen overflow-x-hidden">
       <Header />
       <main>
         <Hero />
