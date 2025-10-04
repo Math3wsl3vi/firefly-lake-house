@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, X, Wifi, Flame, Coffee, Wind, Droplets, Users, Home, MapPin, Star } from 'lucide-react';
+import { Footer } from '../Footer';
 
 interface Amenity {
   icon: React.ComponentType<{ className?: string }>;
@@ -190,26 +191,13 @@ export default function AccommodationDetails() {
   return (
     <div className="min-h-screen bg-stone">
       {/* Header */}
-      <div className="bg-charcoal/80 backdrop-blur-sm sticky top-0 z-40 border-b border-gray-400">
+      <div className="bg-charcoal/70 backdrop-blur-sm sticky top-0 z-40 border-b border-gray-400">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <button 
-            onClick={() => window.history.back()}
-            className="inline-flex items-center  hover:text-amber transition-colors"
-          >
-            <ChevronLeft className="w-5 h-5 mr-1" />
-            Back to Accommodations
-          </button>
-          <select
-            value={selectedAccommodation}
-            onChange={(e) => setSelectedAccommodation(e.target.value)}
-            className="bg-charcoal  px-4 py-2 rounded-lg border border-cream/20 focus:outline-none focus:ring-2 focus:ring-amber"
-          >
-            {Object.keys(accommodationsData).map((key) => (
-              <option key={key} value={key}>
-                {accommodationsData[key].title}
-              </option>
-            ))}
-          </select>
+          <a href="#" className="flex items-center">
+          <span className={`text-2xl font-serif text-cream`}>
+            Firefly Lakehouse
+          </span>
+        </a>
         </div>
       </div>
 
@@ -246,44 +234,62 @@ export default function AccommodationDetails() {
       )}
 
       {/* Hero Image Grid */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-4 grid-rows-2 gap-2 h-[500px] rounded-lg overflow-hidden">
-          <div
-            className="col-span-2 row-span-2 cursor-pointer relative group overflow-hidden"
-            onClick={() => setShowGallery(true)}
-          >
-            <img
-              src={accommodation.images[0]}
-              alt={accommodation.title}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-          </div>
-          {accommodation.images.slice(1, 5).map((img: string, idx: number) => (
-            <div
-              key={idx}
-              className="cursor-pointer relative group overflow-hidden h-full"
-              onClick={() => {
-                setCurrentImage(idx + 1);
-                setShowGallery(true);
-              }}
-            >
-              <img
-                src={img}
-                alt={`${accommodation.title} - ${idx + 2}`}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-            </div>
-          ))}
-        </div>
-        <button
-          onClick={() => setShowGallery(true)}
-          className="mt-4 px-6 py-2 bg-white/90 hover:bg-white text-charcoal rounded-lg transition-colors"
-        >
-          View All Photos
-        </button>
+<div className="container mx-auto px-4 py-8">
+  <div
+    className="
+      grid gap-2 rounded-lg overflow-hidden 
+      grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 
+      h-auto lg:h-[500px]
+    "
+  >
+    {/* Main large image */}
+    <div
+      className="
+        col-span-1 
+        sm:col-span-2 
+        lg:col-span-2 lg:row-span-2 
+        cursor-pointer relative group overflow-hidden
+      "
+      onClick={() => setShowGallery(true)}
+    >
+      <img
+        src={accommodation.images[0]}
+        alt={accommodation.title}
+        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
+    </div>
+
+    {/* Other images */}
+    {accommodation.images.slice(1, 5).map((img: string, idx: number) => (
+      <div
+        key={idx}
+        className="cursor-pointer relative group overflow-hidden h-full"
+        onClick={() => {
+          setCurrentImage(idx + 1);
+          setShowGallery(true);
+        }}
+      >
+        <img
+          src={img}
+          alt={`${accommodation.title} - ${idx + 2}`}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
       </div>
+    ))}
+  </div>
+
+  {/* Button */}
+  <button
+    onClick={() => setShowGallery(true)}
+    className="mt-4 px-6 py-2 bg-white/90 hover:bg-white text-charcoal rounded-lg transition-colors"
+  >
+    View All Photos
+  </button>
+</div>
+
+
 
       {/* Main Content */}
       <div className="container mx-auto px-4 pb-16">
@@ -465,6 +471,7 @@ export default function AccommodationDetails() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
