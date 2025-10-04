@@ -1,6 +1,7 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Button } from '../Button';
+import { Link } from 'react-router-dom';
 interface AccommodationCardProps {
   title: string;
   description: string;
@@ -42,9 +43,11 @@ function AccommodationCard({
               {feature}
             </li>)}
         </ul>
-        <Button variant="outline" fullWidth>
-          View Details
-        </Button>
+       <Link to={`/accommodations/${title.toLowerCase().replace(/\s+/g, '-')}`}>
+  <Button variant="outline" fullWidth>
+    View Details
+      </Button>
+    </Link>
       </div>
     </div>;
 }
@@ -54,7 +57,7 @@ export function Accommodations() {
     threshold: 0.1
   });
   const accommodations = [{
-    title: 'Lakefront Cabin',
+    title: 'Firefly Log Cabin',
     description: 'Wake up to stunning lake views in this spacious cabin with private deck and direct water access.',
     image: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1189559305118239162/original/25a7b70e-3047-43bd-ad4f-fa71350e2355.jpeg?im_w=1200',
     price: 'From $249/night',
@@ -75,11 +78,11 @@ export function Accommodations() {
   return <section id="accommodations" className="py-20 bg-stone bg-cover bg-center">
       <div className="container mx-auto px-4">
         <div ref={ref} className={`text-center mb-16 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="font-serif text-4xl text-cream mb-6">
+          <h2 className="font-serif text-4xl  mb-6">
             Accommodations
           </h2>
           <div className="w-20 h-1 bg-amber mx-auto mb-6"></div>
-          <p className="text-cream/90 max-w-2xl mx-auto">
+          <p className=" max-w-2xl mx-auto">
             Each of our accommodations offers a unique experience, blending
             rustic charm with modern comforts. Choose your perfect retreat and
             prepare for a stay that feels like coming home to nature.

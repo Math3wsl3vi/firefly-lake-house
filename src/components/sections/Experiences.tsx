@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { CompassIcon, SunriseIcon, FlameIcon, BookOpenIcon, UtensilsIcon } from 'lucide-react';
+import { CompassIcon, SunriseIcon, FlameIcon, BookOpenIcon, UtensilsIcon, Sailboat } from 'lucide-react';
 interface ExperienceCardProps {
   icon: React.ReactNode;
   title: string;
@@ -37,7 +37,7 @@ export function Experiences() {
     title: 'Hiking Trails',
     description: 'Explore miles of marked trails through ancient forests, with views of mountains and wildlife.'
   }, {
-    icon: <div size={32} />,
+    icon: <Sailboat size={32} />,
     title: 'Kayaking & Canoeing',
     description: 'Paddle across our crystal-clear lake at your own pace, with complimentary equipment for guests.'
   }, {
@@ -59,10 +59,10 @@ export function Experiences() {
   }];
   return <section id="experiences" className="py-20 bg-wood bg-cover bg-fixed">
       <div className="container mx-auto px-4">
-        <div ref={ref} className={`text-center mb-16 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="font-serif text-4xl text-cream mb-6">Experiences</h2>
+        <div ref={ref} className={`text-center mb-16 transition-all duration-700 cursor-pointer ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="font-serif text-4xl mb-6">Experiences</h2>
           <div className="w-20 h-1 bg-amber mx-auto mb-6"></div>
-          <p className="text-cream/90 max-w-2xl mx-auto">
+          <p className=" max-w-2xl mx-auto">
             At Firefly Lakehouse, we believe in creating moments that become
             memories. Discover the activities that make our property a true
             retreat for the soul.

@@ -2,6 +2,7 @@ import React, { lazy } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Button } from '../Button';
 import { MapPinIcon, PhoneIcon, MailIcon, InstagramIcon, FacebookIcon, TwitterIcon } from 'lucide-react';
+import { toast } from 'react-toastify';
 export function Contact() {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -10,7 +11,7 @@ export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Here you would typically handle the form submission
-    alert('Thank you for your message! We will get back to you soon.');
+    toast('Thank you for your message! We will get back to you soon.');
   };
   return <section id="contact" className="py-20 bg-charcoal">
       <div className="container mx-auto px-4">
@@ -57,7 +58,7 @@ export function Contact() {
                 </label>
                 <textarea id="message" rows={4} className="w-full px-4 py-3 rounded-md bg-white/20 border border-white/30 text-cream placeholder-cream/60 focus:outline-none focus:ring-2 focus:ring-amber" placeholder="How can we help you?" required></textarea>
               </div>
-              <Button type="submit">Send Message</Button>
+              <button className='bg-amber text-charcoal hover:bg-amber-light shadow-lg hover:shadow-xl inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-300 relative overflow-hidden' type="submit">Send Message</button>
             </form>
           </div>
           {/* Map and Contact Info */}

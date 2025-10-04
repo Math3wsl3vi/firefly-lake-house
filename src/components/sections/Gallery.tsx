@@ -25,7 +25,28 @@ export function Gallery() {
   }, {
     url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1189559305118239162/original/d45ca731-319b-4fc5-91cd-17e06a1d8886.jpeg?im_w=1440',
     alt: 'Morning mist on the lake'
-  }];
+  },{
+    url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1222162999182870462/original/a83a9a79-db28-4940-9ef6-1b7f80a7bc4c.jpeg?im_w=1200',
+    alt: 'Morning mist on the lake'
+  },{
+    url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1222162999182870462/original/314b387e-4c85-4842-ae41-a758ec1acc66.jpeg?im_w=720',
+    alt: 'Morning mist on the lake'
+  },{
+    url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1222162999182870462/original/1a51ed66-0f87-430c-8368-eb623716cfab.jpeg?im_w=1200',
+    alt: 'Morning mist on the lake'
+  },{
+    url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1222162999182870462/original/63e48702-dd3b-4883-bf71-0a096c4d05b0.jpeg?im_w=1440',
+    alt: 'Morning mist on the lake'
+  },
+  {
+    url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1222162999182870462/original/85f47d8d-0c1e-4b03-af3b-714e74ad73e0.jpeg?im_w=720',
+    alt: 'Morning mist on the lake'
+  },
+  {
+    url: 'https://a0.muscache.com/im/pictures/hosting/Hosting-1222162999182870462/original/e7c6883e-79fb-4b24-a2f1-339a473e13ec.jpeg?im_w=720',
+    alt: 'Morning mist on the lake'
+  }
+];
   return <section id="gallery" className="py-20 bg-cream">
       <div className="container mx-auto px-4">
         <div ref={ref} className={`text-center mb-16 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
@@ -36,7 +57,7 @@ export function Gallery() {
             image tells a story of connection, relaxation, and natural beauty.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {images.map((image, index) => <div key={index} className={`overflow-hidden rounded-lg cursor-pointer transition-all duration-700 ${inView ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`} style={{
           transitionDelay: `${index * 100}ms`
         }} onClick={() => setSelectedImage(image.url)}>

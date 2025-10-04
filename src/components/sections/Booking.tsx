@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Button } from '../Button';
+import { toast } from 'react-toastify';
 export function Booking() {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -25,7 +26,7 @@ export function Booking() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Here you would typically handle the booking request
-    alert('Thank you for your booking request! We will contact you shortly to confirm your stay.');
+    toast('Thank you for your booking request! We will contact you shortly to confirm your stay.');
   };
   return <section id="booking" className="py-20 relative overflow-hidden">
       {/* Background with gradient and firefly effect */}
@@ -74,7 +75,7 @@ export function Booking() {
                 <label htmlFor="guests" className="block text-cream mb-2">
                   Number of Guests
                 </label>
-                <select id="guests" name="guests" value={formData.guests} onChange={handleChange} className="w-full px-4 py-3 rounded-md bg-white/20 backdrop-blur-sm border border-white/30 text-cream focus:outline-none focus:ring-2 focus:ring-amber" required>
+                <select id="guests" name="guests" value={formData.guests} onChange={handleChange} className="w-full px-4 py-3 rounded-md bg-white/20 backdrop-blur-sm border border-white/30 focus:outline-none focus:ring-2 focus:ring-amber" required>
                   <option value="1">1 Guest</option>
                   <option value="2">2 Guests</option>
                   <option value="3">3 Guests</option>
@@ -87,7 +88,7 @@ export function Booking() {
                 <label htmlFor="accommodation" className="block text-cream mb-2">
                   Accommodation
                 </label>
-                <select id="accommodation" name="accommodation" value={formData.accommodation} onChange={handleChange} className="w-full px-4 py-3 rounded-md bg-white/20 backdrop-blur-sm border border-white/30 text-cream focus:outline-none focus:ring-2 focus:ring-amber" required>
+                <select id="accommodation" name="accommodation" value={formData.accommodation} onChange={handleChange} className="w-full px-4 py-3 rounded-md bg-white/20 backdrop-blur-sm border border-white/30  focus:outline-none focus:ring-2 focus:ring-amber" required>
                   <option value="">Select an accommodation</option>
                   <option value="lakefront">Lakefront Cabin</option>
                   <option value="forest">Forest Cottage</option>
@@ -96,7 +97,7 @@ export function Booking() {
               </div>
             </div>
             <div className="text-center pt-4">
-              <Button type="submit">Check Availability</Button>
+              <button className='bg-amber text-charcoal hover:bg-amber-light shadow-lg hover:shadow-xl inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-300 relative overflow-hidden' type="submit">Check Availability</button>
             </div>
           </form>
         </div>
